@@ -91,15 +91,14 @@ def content_stripper(s):
 def shamwoj():
     # Aggregate all Woj tweets within last duration, but only if they're news hits
     woj_tweets = []
-    for status in tweepy.Cursor(api.user_timeline, id="wojespn", tweet_mode="extended").items(100):
-        print(status.created_at, d)
+    for status in tweepy.Cursor(api.user_timeline, screen_name="@wojespn", tweet_mode="extended").items(100):
         if ("source" in status.full_text) or ("sources" in status.full_text) or ("Source" in status.full_text) or ("Sources" in status.full_text):
             if status.created_at >= d:
                 woj_tweets.append(status)
 
     # Aggregate all Shams tweets within last duration, but only if they're news hits
     sham_tweets = []
-    for status in tweepy.Cursor(api.user_timeline, id="ShamsCharania", tweet_mode="extended").items(100):
+    for status in tweepy.Cursor(api.user_timeline, screen_name="@ShamsCharania", tweet_mode="extended").items(100):
         if ("source" in status.full_text) or ("sources" in status.full_text) or ("Source" in status.full_text) or ("Sources" in status.full_text):
             if status.created_at >= d:
                 sham_tweets.append(status)
