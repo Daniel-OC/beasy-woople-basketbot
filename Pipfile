@@ -10,6 +10,7 @@ python-Levenshtein = "*"
 fuzzywuzzy = "*"
 django-heroku = "*"
 datetime = "*"
+tweepy = "*"
 
 
 [requires]
