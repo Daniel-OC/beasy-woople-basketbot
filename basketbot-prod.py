@@ -92,6 +92,7 @@ def shamwoj():
     # Aggregate all Woj tweets within last duration, but only if they're news hits
     woj_tweets = []
     for status in tweepy.Cursor(api.user_timeline, id="wojespn", tweet_mode="extended").items(100):
+        print(status.created_at, d)
         if ("source" in status.full_text) or ("sources" in status.full_text) or ("Source" in status.full_text) or ("Sources" in status.full_text):
             if status.created_at >= d:
                 woj_tweets.append(status)
