@@ -3,6 +3,7 @@
 # install and include python-Levenshtein
 import fuzzywuzzy.fuzz as fuzz
 import tweepy
+from os import environ
 import time as timer
 from datetime import datetime, timedelta
 
@@ -10,10 +11,10 @@ from datetime import datetime, timedelta
 ####################################
 # Initialize Authentication Tokens
 ####################################
-consumer_key = '[insert your key here]'
-consumer_secret = '[insert your token here]'
-access_token = '[insert your key here]'
-access_token_secret = '[insert your token here]'
+consumer_key = environ['consumer_key']
+consumer_secret = environ['consumer_key_secret']
+access_token = environ['access_token']
+access_token_secret = environ['access_token_secret']
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -43,7 +44,7 @@ teams_map = {"Hawks": "Atlanta", "Celtics": "Boston", "Nets": "Brooklyn", "Horne
              "Sixers": "Philadelphia", "Philly": "Philadelphia"}
 
 # Specify duration/refresh interval to check back on
-d = datetime.today() - timedelta(hours=3)
+d = datetime.today() - timedelta(hours=1)
 
 
 ####################################
@@ -255,4 +256,4 @@ while True:
     # api.update_status("TESTING HEROKU" + str(c))
     
     # wake up to potentially tweet only once every 3 hours
-    timer.sleep(10800)
+    timer.sleep(3600)
