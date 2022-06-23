@@ -86,6 +86,7 @@ def content_stripper(s):
 
     return s
 
+print("line 89")
 #
 # Primary function for comparing Shams to Woj... Who will come out on top?
 def shamwoj():
