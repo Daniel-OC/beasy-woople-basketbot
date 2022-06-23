@@ -241,7 +241,7 @@ def shamwoj():
                     sham_tweets.remove(ss)
                     woj_tweets.remove(ww)
                     pass
-
+#
 
 ####################
 # Execution block
