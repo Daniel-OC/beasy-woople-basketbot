@@ -5,7 +5,7 @@ import fuzzywuzzy.fuzz as fuzz
 import tweepy
 from os import environ
 import time as timer
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 
 ####################################
@@ -44,7 +44,7 @@ teams_map = {"Hawks": "Atlanta", "Celtics": "Boston", "Nets": "Brooklyn", "Horne
              "Sixers": "Philadelphia", "Philly": "Philadelphia"}
 
 # Specify duration/refresh interval to check back on
-d = datetime.today() - timedelta(hours=1)
+d = datetime.now(timezone.utc) - timedelta(hours=1)
 
 
 ####################################
