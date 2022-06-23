@@ -1,1 +1,1 @@
-worker: python basketbot-prod.py
+worker: python3 basketbot-prod.py
