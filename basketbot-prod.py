@@ -172,8 +172,8 @@ def shamwoj():
             # If there is a similarity between the tweets found...
             if simtoken == 1:
                 # Debug statements
-                print "-s-", s
-                print "+w+", w
+                print("-s-", s)
+                print("+w+", w)
 
                 # Wrap final functionality into exception handler
                 try:
