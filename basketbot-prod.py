@@ -105,6 +105,7 @@ def shamwoj():
 
     # Iterate through Shams/Woj tweets to find similar tweets
     for ss in sham_tweets:
+        print(108)
         for ww in woj_tweets:
             # Get the content out of the tweet objects
             s = ss.full_text
@@ -179,6 +180,7 @@ def shamwoj():
                 try:
                     # Shams got it first
                     if ss.created_at < ww.created_at:
+                        print("182")
                         diff = (ww.created_at - ss.created_at).total_seconds()
 
                         # A fairly non-elegant scorekeeper method
@@ -203,6 +205,7 @@ def shamwoj():
                                           " https://twitter.com/ShamsCharania/status/" + str(ss.id))
                     # Woj got it first
                     elif ss.created_at > ww.created_at:
+                        print(207)
                         diff = (ss.created_at - ww.created_at).total_seconds()
 
                         # A fairly non-elegant scorekeeper method
