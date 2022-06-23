@@ -86,7 +86,7 @@ def content_stripper(s):
 
     return s
 
-
+#
 # Primary function for comparing Shams to Woj... Who will come out on top?
 def shamwoj():
     # Aggregate all Woj tweets within last duration, but only if they're news hits
